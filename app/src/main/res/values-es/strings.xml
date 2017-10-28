@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string name="app_name">POSSIBLE - Lista de libros</string>
+<string name="retrofit_comm_error">Error de comunicación</string>
+<string name="menu_exit">Salir de aplicación</string>
+<string name="no_data_to_display">No hay datos para mostrar</string>
+<string name="title_exit">Salir?</string>
+<string name="msg_exit">¿Realmente quieres cerrar la aplicación?</string>
+<string name="btn_pos_exit">Si</string>
+
+</resources>

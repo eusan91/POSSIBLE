@@ -51,6 +51,8 @@ class AdapterBooks (private var context: Context, private var booksList : List<B
         Picasso.with(context).load(book.imageURL).resize(300,300).into(viewHolder.ivBook)
         if (book.author != null) {
             viewHolder.tvAuthor.text= "Author: " + book.author
+        } else {
+            viewHolder.tvAuthor.text= ""
         }
         viewHolder.tvTitle.text= book.title
 
