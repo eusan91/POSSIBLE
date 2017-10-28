@@ -3,6 +3,8 @@ package com.santamaria.possiblecodingchallenge.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.Toast
@@ -31,8 +33,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    fun getBooks()  {
+    //Do the call to the WS in order to get the book list
+    private fun getBooks()  {
 
         var bookCall : Call<List<Book>> = BookAPICall.getBooks().getBooks("books", "json")
 
@@ -41,13 +43,7 @@ class MainActivity : AppCompatActivity() {
                 if (response != null && response.isSuccessful) {
                     bookList = response.body()
 
-                    if (bookList != null) {
-                        customBookAdapter = AdapterBooks(applicationContext, bookList!!, R.layout.listview_book_item)
-                    }
-
-                    if (customBookAdapter != null) {
-                        listViewBooks?.adapter = customBookAdapter
-                    }
+                    loadListView()
                 }
             }
 
@@ -56,5 +52,31 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+    }
+
+    //Once data is retrieved from server this function will load the UI
+    private fun loadListView(){
+        if (bookList != null) {
+            customBookAdapter = AdapterBooks(applicationContext, bookList!!, R.layout.listview_book_item)
+        }
+
+        if (customBookAdapter != null) {
+            listViewBooks?.adapter = customBookAdapter
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_exit, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when(item?.itemId){
+            R.id.idExit -> {this.finish()}
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
