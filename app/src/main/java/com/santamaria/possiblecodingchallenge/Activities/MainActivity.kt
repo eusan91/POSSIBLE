@@ -1,10 +1,9 @@
 package com.santamaria.possiblecodingchallenge.Activities
 
 
-import android.opengl.Visibility
-import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -96,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         when(item?.itemId){
-            R.id.idExit -> {this.finish()}
+            R.id.idExit -> {alertDialogClose()}
         }
         return super.onOptionsItemSelected(item)
     }
@@ -105,5 +104,18 @@ class MainActivity : AppCompatActivity() {
         if (pbLoading != null) {
             pbLoading?.visibility = View.GONE
         }
+    }
+
+    private fun alertDialogClose() {
+
+        var alert = AlertDialog.Builder(this).create()
+        alert.setTitle(getString(R.string.title_exit))
+        alert.setMessage(getString(R.string.msg_exit))
+        alert.setButton(AlertDialog.BUTTON_NEGATIVE, "No", { dialogInterface, i -> })
+        alert.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.btn_pos_exit), { dialogInterface, i ->
+            this.finish()
+        })
+        alert.show()
+
     }
 }

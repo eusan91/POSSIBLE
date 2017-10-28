@@ -3,4 +3,7 @@
     <string name="retrofit_comm_error">Communication error</string>
     <string name="menu_exit">Exit</string>
     <string name="no_data_to_display">No Data to display</string>
+    <string name="title_exit">Exit?</string>
+    <string name="msg_exit">Do you want to close the app?</string>
+    <string name="btn_pos_exit">Yes</string>
 </resources>
