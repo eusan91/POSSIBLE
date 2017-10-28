@@ -11,7 +11,7 @@ class BookAPICall {
     companion object {
         fun getBooks() : BookService {
             return Retrofit.Builder()
-                    .baseUrl("http://de-coding-test.s3.amazonaws.com1")
+                    .baseUrl("http://de-coding-test.s3.amazonaws.com")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(BookService::class.java)
