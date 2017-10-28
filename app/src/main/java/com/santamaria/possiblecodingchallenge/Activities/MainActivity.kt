@@ -18,12 +18,12 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    var bookList : List<Book>? = null
-    var listViewBooks : ListView? = null
-    var pbLoading : ProgressBar? = null
-    var tvInformation : TextView? = null
+    private var bookList : List<Book>? = null
+    private var listViewBooks : ListView? = null
+    private var pbLoading : ProgressBar? = null
+    private var tvInformation : TextView? = null
 
-    var customBookAdapter : BaseAdapter? = null
+    private var customBookAdapter : BaseAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Get the view from Layout
     private fun getViews(){
         listViewBooks = findViewById(R.id.idListViewBooks)
         pbLoading = findViewById(R.id.idLoading)
@@ -97,15 +98,18 @@ class MainActivity : AppCompatActivity() {
         when(item?.itemId){
             R.id.idExit -> {alertDialogClose()}
         }
+
         return super.onOptionsItemSelected(item)
     }
 
+    //Stop the progress bar
     private fun stopProgressBar(){
         if (pbLoading != null) {
             pbLoading?.visibility = View.GONE
         }
     }
 
+    //Create the alert Dialog for EXIT message
     private fun alertDialogClose() {
 
         var alert = AlertDialog.Builder(this).create()

@@ -9,9 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class BookAPICall {
 
     companion object {
+        private val baseURL = "http://de-coding-test.s3.amazonaws.com"
+
         fun getBooks() : BookService {
             return Retrofit.Builder()
-                    .baseUrl("http://de-coding-test.s3.amazonaws.com")
+                    .baseUrl(baseURL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(BookService::class.java)

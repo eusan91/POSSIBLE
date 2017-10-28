@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.santamaria.possiblecodingchallenge.Activities.MainActivity">
 
-
     <ListView
         android:id="@+id/idListViewBooks"
         android:layout_width="match_parent"
