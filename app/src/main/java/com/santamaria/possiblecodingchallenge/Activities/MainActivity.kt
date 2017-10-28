@@ -1,8 +1,9 @@
 package com.santamaria.possiblecodingchallenge.Activities
 
-import android.content.Context
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ListView
 import android.widget.Toast
 import com.santamaria.possiblecodingchallenge.Domain.Book
 import com.santamaria.possiblecodingchallenge.R
@@ -14,10 +15,14 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     var bookList : List<Book>? = null
+    var listViewBooks : ListView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        listViewBooks = findViewById(R.id.idListViewBooks)
+
     }
 
 
