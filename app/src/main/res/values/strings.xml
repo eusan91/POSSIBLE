@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PossibleCodingChallenge</string>
+    <string name="retrofit_comm_error">Communication error</string>
 </resources>
