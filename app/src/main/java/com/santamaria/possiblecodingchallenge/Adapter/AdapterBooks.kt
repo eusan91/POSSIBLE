@@ -48,8 +48,10 @@ class AdapterBooks (private var context: Context, private var booksList : List<B
 
         val book = booksList[position]
 
-        Picasso.with(context).load(book.imageURL).into(viewHolder.ivBook)
-        viewHolder.tvAuthor.text= book.author
+        Picasso.with(context).load(book.imageURL).resize(300,300).into(viewHolder.ivBook)
+        if (book.author != null) {
+            viewHolder.tvAuthor.text= "Author: " + book.author
+        }
         viewHolder.tvTitle.text= book.title
 
         return view
