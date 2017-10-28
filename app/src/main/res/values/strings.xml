@@ -2,4 +2,5 @@
     <string name="app_name">Possible Book List</string>
     <string name="retrofit_comm_error">Communication error</string>
     <string name="menu_exit">Exit</string>
+    <string name="no_data_to_display">No Data to display</string>
 </resources>
